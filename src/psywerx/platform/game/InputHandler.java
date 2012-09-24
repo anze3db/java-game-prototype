@@ -6,7 +6,6 @@ import java.awt.event.KeyEvent;
 public class InputHandler extends KeyAdapter {
     
     private Game game;
-    private int pressedKeys = 0;
 
     public InputHandler(Game g){
         game = g;
@@ -14,19 +13,36 @@ public class InputHandler extends KeyAdapter {
     
     public void keyPressed(KeyEvent e) {
         switch(e.getKeyCode()){
+            case(KeyEvent.VK_DOWN):
+                game.directionD++;
+                break;
+            case(KeyEvent.VK_UP):
+                game.directionU++;
+                break;
             case(KeyEvent.VK_LEFT):
-                pressedKeys++;
-                game.direction = -1;
+                game.directionL++;
                 break;
             case(KeyEvent.VK_RIGHT):
-                pressedKeys++;
-                game.direction = 1;
+                game.directionR++;
                 break;
         }
     } 
     
     public void keyReleased(KeyEvent e) {
-        if(pressedKeys-- == 0);
-            game.direction = 0;
+        switch(e.getKeyCode()){
+            case(KeyEvent.VK_DOWN):
+                game.directionD--;
+                break;
+            case(KeyEvent.VK_UP):
+                game.directionU--;
+                break;
+            case(KeyEvent.VK_LEFT):
+                game.directionL--;
+                break;
+            case(KeyEvent.VK_RIGHT):
+                game.directionR--;
+                break;
+        }
+        
     }
 }
