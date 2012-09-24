@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 public class Game {
 
     private double x;
-    private long direction = 1;
+    protected long direction = 0;
     private int fps;
     private long totalTime;
     private int frames;
@@ -17,12 +17,13 @@ public class Game {
     }
 
     public void tick(long delta) {
-        x += delta * direction * 0.2d;
+        System.out.println(x);
+        x += delta * direction * 0.5d;
         if (x > Main.WIDTH - 100) {
-            direction *= -1;
+            x = Main.WIDTH - 100;
         }
         if (x < 0) {
-            direction *= -1;
+            x = 0;
         }
 
         // Calculate frame count:

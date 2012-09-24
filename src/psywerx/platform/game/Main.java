@@ -6,6 +6,8 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
@@ -18,6 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Game game = new Game();
+        
         // Create game window...
         JFrame frame = new JFrame();
         frame.setIgnoreRepaint(true);
@@ -27,6 +31,8 @@ public class Main {
         Canvas canvas = new Canvas();
         canvas.setIgnoreRepaint(true);
         canvas.setSize(WIDTH, HEIGHT);
+
+        canvas.addKeyListener(new InputHandler(game));
 
         // Add canvas to game window...
         frame.add(canvas);
@@ -53,7 +59,6 @@ public class Main {
         long curTime = System.currentTimeMillis();
         long lastTime = curTime;
 
-        Game game = new Game();
         // Main game loop
         while (true) {
             try {
