@@ -42,7 +42,8 @@ public class InputHandler extends KeyAdapter {
             case(KeyEvent.VK_RIGHT):
                 game.directionR--;
                 break;
+                
+                
         }
-        
     }
 }

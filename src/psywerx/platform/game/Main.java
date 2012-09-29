@@ -31,9 +31,12 @@ public class Main {
         canvas.setSize(WIDTH, HEIGHT);
 
         canvas.addKeyListener(new InputHandler(game));
-
+        canvas.addMouseListener(new MouseHandler(game));
+        
+        
         // Add canvas to game window...
         frame.add(canvas);
+        
         frame.pack();
         frame.setVisible(true);
 
