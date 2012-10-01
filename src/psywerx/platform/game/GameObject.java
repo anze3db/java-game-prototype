@@ -1,16 +1,31 @@
 package psywerx.platform.game;
 
+import java.awt.Graphics2D;
+
 public class GameObject {
 
     protected double x, y;
-    protected int centerX, centerY;
     protected int size = 10;
     
-    public GameObject(int x2, int y2) {
-        x = (double) ((x2/size)*size);
-        y = (double) ((y2/size)*size);
-        centerX = (int) (x + size/2);
-        centerY = (int) (y + size/2);
+    public GameObject(){
+        
+    }
+    
+    public GameObject(int startX, int startY) {
+        x = (double) ((startX/size)*size);
+        y = (double) ((startY/size)*size);
+    }
+    public void Draw(){
+        
+    }
+    public void render(Graphics2D g) {
+        g.translate(x, y);
+        g.fillRect(0, 0, size, size);
+        g.translate(-x, -y);
+    }
+
+    public void tick(long delta) {
+
     }
 
 }

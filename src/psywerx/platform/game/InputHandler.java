@@ -5,25 +5,22 @@ import java.awt.event.KeyEvent;
 
 public class InputHandler extends KeyAdapter {
     
-    private Game game;
-
-    public InputHandler(Game g){
-        game = g;
+    public InputHandler(){
     }
     
     public void keyPressed(KeyEvent e) {
         switch(e.getKeyCode()){
             case(KeyEvent.VK_DOWN):
-                game.directionD++;
+                Main.game.player.directionD++;
                 break;
             case(KeyEvent.VK_UP):
-                game.directionU++;
+                Main.game.player.directionU++;
                 break;
             case(KeyEvent.VK_LEFT):
-                game.directionL++;
+                Main.game.player.directionL++;
                 break;
             case(KeyEvent.VK_RIGHT):
-                game.directionR++;
+                Main.game.player.directionR++;
                 break;
         }
     } 
@@ -31,16 +28,16 @@ public class InputHandler extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
         switch(e.getKeyCode()){
             case(KeyEvent.VK_DOWN):
-                game.directionD--;
+                Main.game.player.directionD--;
                 break;
             case(KeyEvent.VK_UP):
-                game.directionU--;
+                Main.game.player.directionU--;
                 break;
             case(KeyEvent.VK_LEFT):
-                game.directionL--;
+                Main.game.player.directionL--;
                 break;
             case(KeyEvent.VK_RIGHT):
-                game.directionR--;
+                Main.game.player.directionR--;
                 break;
                 
                 

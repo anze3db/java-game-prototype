@@ -15,11 +15,12 @@ public class Main {
 
     protected static final int WIDTH = 800;
     protected static final int HEIGHT = 250;
+    protected static Game game;
 
     public static void main(String[] args) {
 
-        Game game = new Game();
-        
+        game = new Game();
+
         // Create game window...
         JFrame frame = new JFrame();
         frame.setIgnoreRepaint(true);
@@ -30,13 +31,12 @@ public class Main {
         canvas.setIgnoreRepaint(true);
         canvas.setSize(WIDTH, HEIGHT);
 
-        canvas.addKeyListener(new InputHandler(game));
-        canvas.addMouseListener(new MouseHandler(game));
-        
-        
+        canvas.addKeyListener(new InputHandler());
+        canvas.addMouseListener(new MouseHandler());
+
         // Add canvas to game window...
         frame.add(canvas);
-        
+
         frame.pack();
         frame.setVisible(true);
 
