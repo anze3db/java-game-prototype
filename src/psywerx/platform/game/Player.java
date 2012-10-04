@@ -2,28 +2,31 @@ package psywerx.platform.game;
 
 public class Player extends GameObject {
 
-    protected double directionL, directionR, directionD, directionU = 0;
+    protected Vector direction = new Vector();
+    protected Vector velocity = new Vector();
+    protected Vector acceleration = new Vector();
 
     public Player() {
     }
 
     public void tick(long delta) {
 
+        
         double oldX = x;
         double oldY = y;
+        
+        x += velocity.x*delta;
+        y += velocity.y*delta;
 
-        x += (delta * (directionR - directionL) * 0.5d);
-        y += (delta * (directionD - directionU) * 0.5d);
-
-        // Simple colission detection:
+        // Simple collision detection:
         for (GameObject obj : Main.game.objects) {
             if ((x + size) > obj.x && (y + size) > obj.y && x < (obj.x + obj.size)
                     && (y < obj.y + obj.size)) {
                 x = oldX;
                 y = oldY;
             }
+            
         }
-
         if (x > Main.WIDTH - size) {
             x = Main.WIDTH - size;
         }
@@ -31,7 +34,8 @@ public class Player extends GameObject {
             x = 0;
         }
         if (y > Main.HEIGHT - size) {
-            y = Main.HEIGHT - size;
+            y = 0;
+            x = 0;
         }
         if (y < 0) {
             y = 0;

@@ -33,13 +33,17 @@ public class Main {
 
         canvas.addKeyListener(new InputHandler());
         canvas.addMouseListener(new MouseHandler());
+        canvas.requestFocusInWindow();
 
+        
         // Add canvas to game window...
         frame.add(canvas);
-
+        
         frame.pack();
         frame.setVisible(true);
-
+        
+        canvas.requestFocus();
+        
         // Create BackBuffer...
         canvas.createBufferStrategy(2);
         BufferStrategy buffer = canvas.getBufferStrategy();
