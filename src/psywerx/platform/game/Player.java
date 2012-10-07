@@ -11,21 +11,24 @@ public class Player extends GameObject {
 
     public void tick(long delta) {
 
-        
         double oldX = x;
         double oldY = y;
-        
-        x += velocity.x*delta;
-        y += velocity.y*delta;
+
+        x += velocity.x * delta;
+        y += velocity.y * delta;
 
         // Simple collision detection:
         for (GameObject obj : Main.game.objects) {
             if ((x + size) > obj.x && (y + size) > obj.y && x < (obj.x + obj.size)
                     && (y < obj.y + obj.size)) {
-                x = oldX;
+                // There is a collision:
                 y = oldY;
-            }
+                x = oldX;
+
             
+            
+            }
+
         }
         if (x > Main.WIDTH - size) {
             x = Main.WIDTH - size;
@@ -33,7 +36,7 @@ public class Player extends GameObject {
         if (x < 0) {
             x = 0;
         }
-        if (y > Main.HEIGHT - size) {
+        if (y > Main.HEIGHT) {
             y = 0;
             x = 0;
         }
