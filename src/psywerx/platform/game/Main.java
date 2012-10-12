@@ -13,8 +13,8 @@ import javax.swing.JFrame;
 
 public class Main {
 
-    protected static final int WIDTH = 800;
-    protected static final int HEIGHT = 250;
+    protected static final int WIDTH = 250;
+    protected static final int HEIGHT = 800;
     protected static Game game;
 
     public static void main(String[] args) {

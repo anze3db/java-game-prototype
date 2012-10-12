@@ -3,7 +3,7 @@ package psywerx.platform.game;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.util.LinkedList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Game {
 
@@ -12,7 +12,7 @@ public class Game {
     private int frames;
 
     protected Player player = new Player();
-    protected LinkedList<GameObject> objects = new LinkedList<GameObject>();
+    protected CopyOnWriteArrayList<GameObject> objects = new CopyOnWriteArrayList<GameObject>();
 
     public Game() {
         player.size = 20;
@@ -38,10 +38,9 @@ public class Game {
         g.setColor(Color.black);
         g.fillRect(0, 0, Main.WIDTH, Main.HEIGHT);
 
-        g.setColor(new Color(0, 150, 0));
+        
         player.render(g);
 
-        g.setColor(new Color(150, 0, 0));
         for (GameObject obj : objects) {
             obj.render(g);
         }

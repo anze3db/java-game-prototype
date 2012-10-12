@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 
 public class MouseHandler extends MouseAdapter {
 
-
     public MouseHandler() {
     }
 
@@ -31,6 +30,5 @@ public class MouseHandler extends MouseAdapter {
     @Override
     public void mouseClicked(MouseEvent me) {
         Main.game.objects.add(new GameObject(me.getX(), me.getY()));
-
     }
 }

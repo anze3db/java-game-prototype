@@ -11,10 +11,10 @@ public class InputHandler extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
             case (KeyEvent.VK_DOWN):
-                Main.game.player.velocity.y += 0.3;
+//                Main.game.player.velocity.y += 0.3;
                 break;
             case (KeyEvent.VK_UP):
-                Main.game.player.velocity.y += -0.3;
+//                Main.game.player.velocity.y += -0.3;
                 break;
             case (KeyEvent.VK_LEFT):
                 Main.game.player.velocity.x += -0.3;
@@ -28,10 +28,10 @@ public class InputHandler extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
             case (KeyEvent.VK_DOWN):
-                Main.game.player.velocity.y -= 0.3;
+//                Main.game.player.velocity.y -= 0.3;
                 break;
             case (KeyEvent.VK_UP):
-                Main.game.player.velocity.y -= -0.3;
+//                Main.game.player.velocity.y -= -0.3;
                 break;
             case (KeyEvent.VK_LEFT):
                 Main.game.player.velocity.x -= -0.3;
