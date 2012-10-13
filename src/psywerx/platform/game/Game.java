@@ -35,7 +35,12 @@ public class Game {
     public void render(Graphics2D g) {
 
         // Reset screen:
+
+        g.setColor(Color.gray);
+        g.fillRect(0, 0, Main.WIDTH, Main.HEIGHT);
         g.setColor(Color.black);
+        g.translate(Main.game.player.velocity.x*10, 0);
+        
         g.fillRect(0, 0, Main.WIDTH, Main.HEIGHT);
 
         
@@ -49,5 +54,12 @@ public class Game {
         g.setFont(new Font("Courier New", Font.PLAIN, 12));
         g.setColor(Color.GREEN);
         g.drawString(String.format("FPS: %s", fps), 20, 20);
+    }
+
+    public void resetObjects() {
+        for (GameObject o : objects) {
+            o.color = Color.RED;
+        }
+        
     }
 }

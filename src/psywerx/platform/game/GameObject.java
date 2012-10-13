@@ -8,17 +8,23 @@ public class GameObject {
     protected double x, y;
     protected int size = 10;
     protected Color color = new Color(150, 0, 0);
-    
-    public GameObject(){
-        
+
+    protected Vector direction = new Vector();
+    protected Vector velocity = new Vector();
+    protected Vector acceleration = new Vector();
+    protected boolean falling = false;
+
+    public GameObject() {
+
     }
-    
+
     public GameObject(int startX, int startY) {
-        x = (double) ((startX/size)*size);
-        y = (double) ((startY/size)*size);
+        x = (double) ((startX / size) * size);
+        y = (double) ((startY / size) * size);
     }
-    public void Draw(){
-        
+
+    public void Draw() {
+
     }
     public void render(Graphics2D g) {
         g.setColor(color);

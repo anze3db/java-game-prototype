@@ -17,10 +17,13 @@ public class InputHandler extends KeyAdapter {
 //                Main.game.player.velocity.y += -0.3;
                 break;
             case (KeyEvent.VK_LEFT):
-                Main.game.player.velocity.x += -0.3;
+                Main.game.player.acceleration.x += -0.3;
                 break;
             case (KeyEvent.VK_RIGHT):
-                Main.game.player.velocity.x += 0.3;
+                Main.game.player.acceleration.x += 0.3;
+                break;
+            case (KeyEvent.VK_R):
+                Main.game.resetObjects();
                 break;
         }
     }
@@ -34,10 +37,10 @@ public class InputHandler extends KeyAdapter {
 //                Main.game.player.velocity.y -= -0.3;
                 break;
             case (KeyEvent.VK_LEFT):
-                Main.game.player.velocity.x -= -0.3;
+                Main.game.player.acceleration.x -= -0.3;
                 break;
             case (KeyEvent.VK_RIGHT):
-                Main.game.player.velocity.x -= 0.3;
+                Main.game.player.acceleration.x -= 0.3;
                 break;
 
         }
